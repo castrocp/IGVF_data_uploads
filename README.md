@@ -45,7 +45,35 @@ iu_register.py -m sandbox -p human_donor -i /home/castrocp/igvf_uploads/sem_meta
 Running the command with `-d` will run it in "dry run" mode for testing. Remove that to actually submit the file.
 
 
-### 3) Submit prediction_set object
+### 3) Submit software object
+
+Metadata file:  
+```
+name    title   description     source_url      aliases
+sempl   SEMpl   SNP effect matrix pipeline software     https://github.com/Boyle-Lab/SEMpl      alan-boyle:sempl_software
+```
+In the software metadata file, "name" should be a lowercase version of "title"  
+
+Post file:
+`iu_register.py -m sandbox -p software -i /home/castrocp/igvf_uploads/sem_metadata_software.txt`
+
+### 4) Submit software_version object
+
+Software version metadata file:
+```
+software        version downloaded_url  aliases
+sempl   1.0.1   https://github.com/Boyle-Lab/SEMpl      alan-boyle:sempl_version
+```
+
+Post software version:
+`iu_register.py -m sandbox -p software_version -i /home/castrocp/igvf_uploads/sem_metadata_softw
+areVersion.txt`
+
+### 5) Submit workflow object
+
+### 6) Submit model_set object
+
+### 7) Submit prediction_set object
 Example of schema at: <https://data.igvf.org/profiles/prediction_set/>  
 
 Required fields: "lab", "award", "file_set_type", "samples" or "donor"  
@@ -69,7 +97,9 @@ Post prediction_set file:
 iu_register.py -m sandbox -p prediction_set -i /home/castrocp/igvf_uploads/sem_metadata_predictionSet.txt`  
 ```
 
-### 4) Submit tabular_file object
+### 8) Submit matrix_file object
+
+### 9) Submit tabular_file object
 After human_donor and prediction_set objects have been submitted, tabular_file will be similar.
 As of (Feb. 7, 2024) the most appropriate "content_type" available was "peaks", so that's what was used here.  
 
@@ -88,7 +118,7 @@ Post tabular_file metadata file:
 iu_register.py -m sandbox -p tabular_file -i /home/castrocp/igvf_uploads/sem_metadata_tabularfile_AHR.txt`  
 ```
 
-
+### 10) Submit analysis_step object
 
 
 
