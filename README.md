@@ -54,7 +54,7 @@ sempl   SEMpl   SNP effect matrix pipeline software     https://github.com/Boyle
 ```
 In the software metadata file, "name" should be a lowercase version of "title"  
 
-Post file:
+Post file:  
 `iu_register.py -m sandbox -p software -i /home/castrocp/igvf_uploads/sem_metadata_software.txt`
 
 ### 4) Submit software_version object
@@ -65,13 +65,33 @@ software        version downloaded_url  aliases
 sempl   1.0.1   https://github.com/Boyle-Lab/SEMpl      alan-boyle:sempl_version
 ```
 
-Post software version:
-`iu_register.py -m sandbox -p software_version -i /home/castrocp/igvf_uploads/sem_metadata_softw
-areVersion.txt`
+# want to check if version number can include more descriptive name in front of the version number, i.e. "sempl-v1.0.1  
+
+Post software version:  
+`iu_register.py -m sandbox -p software_version -i /home/castrocp/igvf_uploads/sem_metadata_softwareVersion.txt`
 
 ### 5) Submit workflow object
+Metadata file:  
+```
+name    source_url      publication_identifiers aliases
+SNP Effect Matrix pipeline      https://github.com/Boyle-Lab/SEMpl      doi:10.1093/bioinformatics/btz612, PMID:31373606, PMCID:PMC7999143        alan-boyle:sempl_workflow
+```
+
+Post workflow object:  
+`iu_register.py -m sandbox -p workflow -i /home/castrocp/igvf_uploads/sem_metadata_workflow.txt`
+
+The workflow will be made up of analysis_step objects which are the final objects to be submitted.
 
 ### 6) Submit model_set object
+Metadata file:
+```
+file_set_type   model_name      model_version   prediction_objects      software_version	aliases
+random forest   SEMpl   v1.0.1  non-coding variants     alan-boyle:sempl_version	alan-boyle:SEM_model_set
+```
+The `software_version` has to link to the `software_version` object posted previously.      
+
+Post workflow object:  
+`iu_register.py -m sandbox -p model_set -i /home/castrocp/igvf_uploads/sem_metadata_modelSet.txt`
 
 ### 7) Submit prediction_set object
 Example of schema at: <https://data.igvf.org/profiles/prediction_set/>  
@@ -98,6 +118,7 @@ iu_register.py -m sandbox -p prediction_set -i /home/castrocp/igvf_uploads/sem_m
 ```
 
 ### 8) Submit matrix_file object
+
 
 ### 9) Submit tabular_file object
 After human_donor and prediction_set objects have been submitted, tabular_file will be similar.
