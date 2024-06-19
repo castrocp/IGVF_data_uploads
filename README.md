@@ -130,8 +130,8 @@ Post reference_file
 ### 9) Submit matrix_file object
 Metadata file:
 ```
-content_type    dimension1      dimension2      file_format     file_set        md5sum  reference_files
-sparse peak count matrix        genomic position        variant mtx     alan-boyle:SEM_model_set        440e13463296927df4c598228ec9a2e5        alan-boyle:SEM_referencefile    alan-boyle:AHR_matrix
+content_type    dimension1      dimension2      file_format     file_set        md5sum  reference_files submitted_file_name     aliases
+sparse peak count matrix        genomic position        variant mtx     alan-boyle:SEM_model_set        440e13463296927df4c598228ec9a2e5        alan-boyle:SEM_referencefile    /home/castrocp/igvf_uploads/sem_data/M00778.sem alan-boyle:AHR_matrix
 ```
 
 Post matrix_file
