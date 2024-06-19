@@ -116,11 +116,28 @@ Post prediction_set file:
 ```
 iu_register.py -m sandbox -p prediction_set -i /home/castrocp/igvf_uploads/sem_metadata_predictionSet.txt`  
 ```
+### 8) Submit reference_file object
+Metadata file:
+```
+content_type    controlled_access       file_format     file_set        md5sum  submitted_file_name     aliases
+studies false   txt     alan-boyle:SEM_model_set        55b655b4e5b6edcf9e75e552337c4b1a        /home/castrocp/igvf_uploads/sem_data/SEMpl_provenance.txt    alan-boyle:SEM_referencefile
+```
 
-### 8) Submit matrix_file object
+Post reference_file
+`iu_register.py -m sandbox -p reference_file -i /home/castrocp/igvf_uploads/sem_metadata_referencefile.txt`
 
 
-### 9) Submit tabular_file object
+### 9) Submit matrix_file object
+Metadata file:
+```
+content_type    dimension1      dimension2      file_format     file_set        md5sum  reference_files
+sparse peak count matrix        genomic position        variant mtx     alan-boyle:SEM_model_set        440e13463296927df4c598228ec9a2e5        alan-boyle:SEM_referencefile    alan-boyle:AHR_matrix
+```
+
+Post matrix_file
+`iu_register.py -m sandbox -p matrix_file -i /home/castrocp/igvf_uploads/sem_metadata_matrixfile_AHR.txt`
+
+### 10) Submit tabular_file object
 After human_donor and prediction_set objects have been submitted, tabular_file will be similar.
 As of (Feb. 7, 2024) the most appropriate "content_type" available was "peaks", so that's what was used here.  
 
@@ -139,7 +156,7 @@ Post tabular_file metadata file:
 iu_register.py -m sandbox -p tabular_file -i /home/castrocp/igvf_uploads/sem_metadata_tabularfile_AHR.txt`  
 ```
 
-### 10) Submit analysis_step object
+### 11) Submit analysis_step object
 
 
 
