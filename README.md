@@ -123,7 +123,7 @@ content_type    controlled_access       file_format     file_set        md5sum  
 studies false   txt     alan-boyle:SEM_model_set        55b655b4e5b6edcf9e75e552337c4b1a        /home/castrocp/igvf_uploads/sem_data/SEMpl_provenance.txt    alan-boyle:SEM_referencefile
 ```
 
-Post reference_file
+Post reference_file  
 `iu_register.py -m sandbox -p reference_file -i /home/castrocp/igvf_uploads/sem_metadata_referencefile.txt`
 
 
@@ -134,7 +134,7 @@ content_type    dimension1      dimension2      file_format     file_set        
 sparse peak count matrix        genomic position        variant mtx     alan-boyle:SEM_model_set        440e13463296927df4c598228ec9a2e5        alan-boyle:SEM_referencefile    /home/castrocp/igvf_uploads/sem_data/M00778.sem alan-boyle:AHR_matrix
 ```
 
-Post matrix_file
+Post matrix_file  
 `iu_register.py -m sandbox -p matrix_file -i /home/castrocp/igvf_uploads/sem_metadata_matrixfile_AHR.txt`
 
 ### 10) Submit tabular_file object
